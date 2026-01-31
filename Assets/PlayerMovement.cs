@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     float movementSpeed = 5f;
     bool isFacingRight = true;
     float jumpPower = 4f;
-    bool isGrounded = false;
+    bool isGrounded = true;
 
     Rigidbody2D rb;
     Animator animator;
@@ -28,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
         FlipSprite();
 
-        if (Input.GetButtonDown("Jump") && !isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            //rb.velocity = new Vector2(rb.velocity.y, jumpPower);
+            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             isGrounded = false;
             animator.SetBool("isJumping", !isGrounded);
         }
@@ -56,9 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.GetType());
         isGrounded = true;
         animator.SetBool("isJumping", !isGrounded);
-
-
     }
 }
