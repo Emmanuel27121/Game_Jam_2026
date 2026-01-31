@@ -9,17 +9,18 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float movementSpeed = 5f;
     bool isFacingRight = true;
-    float jumpPower = 4f;
+    float jumpPower = 7f;
     bool isGrounded = true;
-
+    public Camera obj;
     Rigidbody2D rb;
     Animator animator;
     InputSystem_Actions playerControl;
-
+    SpriteRenderer spRender;
 
     private void Awake()
     {
         playerControl = new InputSystem_Actions();
+        spRender = GetComponent<SpriteRenderer>();
         playerControl.Enable();
 
 ;    }
@@ -57,10 +58,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
+            bool flip = spRender.flipX;
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            //Vector3 localScale = transform.localScale;
+            spRender.flipX = !flip;
+            
         }
     }
 
