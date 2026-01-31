@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     Animator animator;
+    InputSystem_Actions playerControl;
 
+
+    private void Awake()
+    {
+        playerControl = new InputSystem_Actions();
+        playerControl.Enable();
+
+;    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,17 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
+
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = playerControl.Player.Move.ReadValue<Vector2>().x;
+
 
         FlipSprite();
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (playerControl.Player.Jump.triggered && isGrounded)
         {
-            //rb.velocity = new Vector2(rb.velocity.y, jumpPower);
-            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            isGrounded = false;
-            animator.SetBool("isJumping", !isGrounded);
+            Jump();
         }
     }
 
@@ -59,6 +68,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(collision.GetType());
         isGrounded = true;
+        animator.SetBool("isJumping", !isGrounded);
+    }
+
+    private void Jump()
+    {
+        //rb.velocity = new Vector2(rb.velocity.y, jumpPower);
+        rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        isGrounded = false;
         animator.SetBool("isJumping", !isGrounded);
     }
 }
