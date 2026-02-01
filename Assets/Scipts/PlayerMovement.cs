@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     public static InputSystem_Actions playerControl;
     SpriteRenderer spRender;
-    
+    bool powerActivated;
+    public Image button;
 
     private void Awake()
     {
@@ -47,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (playerControl.Player.Reset.triggered)
         {
+            StopAllCoroutines();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
@@ -122,6 +126,36 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Correct PLayer");
             MovePlatformY.freez = true;
         }
+
+        if(gameObject.transform.GetSiblingIndex() == 1 )
+        {
+
+            Debug.Log("Double Jump");
+            if (!powerActivated)
+            {
+                jumpPower = 10f;
+                button.gameObject.GetComponent<OnScreenButton>().enabled = false;
+                button.gameObject.GetComponent<Image>().color = Color.black;
+                powerActivated = true;
+                StartCoroutine(EnableAndDisableButton());
+                jumpPower = 7f;
+            }
+            else
+            {
+                return;
+            }
+            
+        }
+    }
+
+
+    IEnumerator EnableAndDisableButton()
+    {
+        yield return new WaitForSeconds(3f);
+        button.gameObject.GetComponent<OnScreenButton>().enabled = true;
+        button.gameObject.GetComponent<Image>().color = Color.white;
+
+
     }
 
 }

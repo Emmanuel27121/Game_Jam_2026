@@ -169,12 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &14644942
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -418,7 +417,7 @@ GameObject:
   - component: {fileID: 108911779}
   - component: {fileID: 108911778}
   - component: {fileID: 108911780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,12 +1777,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &123507836
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2372,12 +2370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &198661023
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2654,12 +2651,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &220877056
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3031,12 +3027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &382224410
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3381,12 +3376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &464606804
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4256,12 +4250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &884514523
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5018,12 +5011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &991647063
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5705,12 +5697,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &1160617574
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6128,12 +6119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!1 &1320835713
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,12 +6171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &1320835716
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6660,6 +6649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2907845047084233120, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1811667563}
     - target: {fileID: 3033922838898644190, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -94.52796
@@ -6704,6 +6697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllCharacters
       objectReference: {fileID: 0}
+    - target: {fileID: 6795756569377089893, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1811667563}
+    - target: {fileID: 7235405209596845125, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1811667563}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6997,6 +6998,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1811667563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8468313040773861156, guid: c01df35473f647844ba221eca7a8593d, type: 3}
+  m_PrefabInstance: {fileID: 1491209388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876370182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7119,12 +7131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: 0
   max: 4
-  timer: 0
 --- !u!19719996 &1891394888
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -36795,12 +36806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f23629c69eecd48bb9ecec986fcdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1811667563}
   moveSpeed: 2
   goUp: 0
   min: -2.5
   max: 0
-  timer: 0
 --- !u!19719996 &2108590230
 TilemapCollider2D:
   m_ObjectHideFlags: 0

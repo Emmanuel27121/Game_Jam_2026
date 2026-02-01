@@ -14,7 +14,7 @@ public class MovePlatformY : MonoBehaviour
     public float min;
     public float max;
     public static bool move = true;
-    public float timer;
+    float timer = 3f;
     bool hasStartedFreeze = false;
     private void Awake()
     {
