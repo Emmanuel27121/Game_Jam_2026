@@ -248,8 +248,7 @@ MonoBehaviour:
   moveSpeed: 2
   goUp: 0
   min: 0
-  max: 0
-  timer: 3
+  max: 4
 --- !u!483693784 &387138277
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -528,8 +527,7 @@ MonoBehaviour:
   moveSpeed: 2
   goUp: 0
   min: 0
-  max: 0
-  timer: 3
+  max: 4
 --- !u!483693784 &394348060
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -10139,9 +10137,8 @@ MonoBehaviour:
   button: {fileID: 6065773743433691605}
   moveSpeed: 2
   goUp: 0
-  min: 0
-  max: 0
-  timer: 3
+  min: -4
+  max: 0.1
 --- !u!483693784 &1713825288
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -11800,6 +11797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2907845047084233120, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 6065773743433691605}
     - target: {fileID: 3033922838898644190, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.730329
@@ -11848,6 +11849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllCharacters
       objectReference: {fileID: 0}
+    - target: {fileID: 7235405209596845125, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 6065773743433691605}
     - target: {fileID: 8501673853506460470, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
       propertyPath: m_IsActive
       value: 1

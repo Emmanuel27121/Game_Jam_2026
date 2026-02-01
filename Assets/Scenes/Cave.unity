@@ -1268,7 +1268,6 @@ MonoBehaviour:
   goUp: 0
   min: 0
   max: 2.5
-  timer: 3
 --- !u!483693784 &693946085
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2663,7 +2662,6 @@ MonoBehaviour:
   goUp: 0
   min: 0
   max: 2.5
-  timer: 3
 --- !u!483693784 &1040943218
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -13202,7 +13200,6 @@ MonoBehaviour:
   goUp: 0
   min: 0
   max: 2.5
-  timer: 5
 --- !u!19719996 &1977372711
 TilemapCollider2D:
   m_ObjectHideFlags: 0
