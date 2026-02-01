@@ -6698,6 +6698,10 @@ PrefabInstance:
       value: AllCharacters
       objectReference: {fileID: 0}
     - target: {fileID: 6795756569377089893, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 1703952280}
+    - target: {fileID: 6795756569377089893, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
       propertyPath: button
       value: 
       objectReference: {fileID: 1811667563}
@@ -6710,6 +6714,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+--- !u!20 &1703952280 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4591955791721465846, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+  m_PrefabInstance: {fileID: 1703952279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708626683
 GameObject:
   m_ObjectHideFlags: 0
@@ -35663,7 +35672,7 @@ GameObject:
   - component: {fileID: 1961105359}
   - component: {fileID: 1961105358}
   - component: {fileID: 1961105357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Start And End
   m_TagString: Untagged
   m_Icon: {fileID: 0}

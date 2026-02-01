@@ -8,5 +8,17 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2f991cbe4b3522448b0287f7ec3a12ad
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 0c46cd84faded2f42b489716257e1a69
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: db11fd11483b9cd4eabfd7649c214bf4
+  - enabled: 1
+    path: Assets/Scenes/Mountains.unity
+    guid: b93fc4ac9eb180443ab3aff273ae37c5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e21a8a3e4c611e742ba9a2a0e01b9284, type: 3}

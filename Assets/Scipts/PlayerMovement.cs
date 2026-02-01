@@ -130,19 +130,14 @@ public class PlayerMovement : MonoBehaviour
         if(gameObject.transform.GetSiblingIndex() == 1 )
         {
 
-            Debug.Log("Double Jump");
-            if (!powerActivated)
+            if (powerActivated == false)
             {
-                jumpPower = 10f;
+                powerActivated = true;
+                jumpPower = 12f;
+                Debug.Log(jumpPower);
                 button.gameObject.GetComponent<OnScreenButton>().enabled = false;
                 button.gameObject.GetComponent<Image>().color = Color.black;
-                powerActivated = true;
                 StartCoroutine(EnableAndDisableButton());
-                jumpPower = 7f;
-            }
-            else
-            {
-                return;
             }
             
         }
@@ -154,15 +149,23 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(3f);
         button.gameObject.GetComponent<OnScreenButton>().enabled = true;
         button.gameObject.GetComponent<Image>().color = Color.white;
-
-
+        jumpPower = 7f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 3)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int currScene = SceneManager.GetActiveScene().buildIndex + 1;
+            Debug.Log(currScene);
+            if(currScene == 4)
+            {
+                currScene = 0;
+            }
+            StopAllCoroutines();
+
+            SceneManager.LoadScene(currScene);
+
         }
     }
 
