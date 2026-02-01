@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float movementSpeed = 5f;
     bool isFacingRight = true;
-    float jumpPower = 7f;
+    float jumpPower = 8f;
     bool isGrounded = true;
     public Camera obj;
     Rigidbody2D rb;
@@ -149,7 +149,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(3f);
         button.gameObject.GetComponent<OnScreenButton>().enabled = true;
         button.gameObject.GetComponent<Image>().color = Color.white;
-        jumpPower = 7f;
+        jumpPower = 8f;
+        powerActivated = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
