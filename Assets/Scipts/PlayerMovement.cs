@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera obj;
     Rigidbody2D rb;
     Animator animator;
-    InputSystem_Actions playerControl;
+    public static InputSystem_Actions playerControl;
     SpriteRenderer spRender;
 
     private void Awake()
@@ -33,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
-
     {
         horizontalInput = playerControl.Player.Move.ReadValue<Vector2>().x;
 
@@ -45,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
     }
 
     private void FixedUpdate()
@@ -68,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.GetType());
+        //Debug.Log(collision.GetType());
         isGrounded = true;
         animator.SetBool("isJumping", !isGrounded);
     }
@@ -80,4 +79,5 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         animator.SetBool("isJumping", !isGrounded);
     }
+
 }
