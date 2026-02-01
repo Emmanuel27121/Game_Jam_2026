@@ -13202,7 +13202,7 @@ MonoBehaviour:
   goUp: 0
   min: 0
   max: 2.5
-  timer: 3
+  timer: 5
 --- !u!19719996 &1977372711
 TilemapCollider2D:
   m_ObjectHideFlags: 0
