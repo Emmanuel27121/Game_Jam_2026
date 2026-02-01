@@ -1173,6 +1173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllCharacters
       objectReference: {fileID: 0}
+    - target: {fileID: 7235405209596845125, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1315648168}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4165808002427320019, guid: 6f8b4b2a9ad7375489ef18c95c30504b, type: 3}
@@ -1601,7 +1605,7 @@ GameObject:
   - component: {fileID: 1025305118}
   - component: {fileID: 1025305117}
   - component: {fileID: 1025305116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Start And End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
