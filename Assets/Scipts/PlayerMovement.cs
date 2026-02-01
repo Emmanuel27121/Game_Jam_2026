@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera obj;
     Rigidbody2D rb;
     Animator animator;
-    InputSystem_Actions playerControl;
+    public static InputSystem_Actions playerControl;
     SpriteRenderer spRender;
 
     private void Awake()
@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        firstMaskPower();
     }
 
     private void FixedUpdate()
@@ -81,8 +80,4 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", !isGrounded);
     }
 
-    private void firstMaskPower()
-    {
-       
-    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MovePlatformY : MonoBehaviour
 {
-    InputSystem_Actions inputObj;
+    public static InputSystem_Actions inputObj;
     public bool freez = false;
     public Image button;
     Transform lockPosition;
@@ -13,6 +13,8 @@ public class MovePlatformY : MonoBehaviour
     public bool goUp;
     public float min;
     public float max;
+    public bool move;
+    public float timer;
     private void Awake()
     {
         inputObj = new InputSystem_Actions();
@@ -29,16 +31,20 @@ public class MovePlatformY : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveTiles();
+        if (move)
+        {
+            moveTiles();
+
+        }
+
     }
 
     private void FixedUpdate()
     {
-        if (inputObj.Player.Power.IsPressed())
+        if (inputObj.Player.Power.IsPressed() && move)
         {
+            StartCoroutine(freezePlatform());
             //button.gameObject.SetActive(false);
-            
-
         }
 
      }
@@ -65,6 +71,26 @@ public class MovePlatformY : MonoBehaviour
             }
         }
         //if(transform.position)
+    }
+
+
+    void freezeBlock()
+    {
+        Transform currTransform = gameObject.transform;
+        if (freez)
+        {
+            transform.position = currTransform.position;
+        }
+        
+    }
+
+    IEnumerator freezePlatform()
+    {
+        move = false;
+        freezeBlock();
+        yield return new WaitForSeconds(timer);
+        freez = false;
+        move = true;
     }
 
 
