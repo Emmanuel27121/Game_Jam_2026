@@ -31,7 +31,8 @@ public class DetectSpikes : MonoBehaviour
 
     IEnumerator reloadScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
+        StopAllCoroutines();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

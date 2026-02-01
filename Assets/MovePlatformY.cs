@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.UI;
 
 public class MovePlatformY : MonoBehaviour
 {
     public static InputSystem_Actions inputObj;
-    public bool freez = false;
+    public static bool freez = false;
     public Image button;
-    Transform lockPosition;
     public float moveSpeed = 2;
     public bool goUp;
     public float min;
     public float max;
-    public bool move;
+    public static bool move = true;
     public float timer;
+    bool hasStartedFreeze = false;
     private void Awake()
     {
         inputObj = new InputSystem_Actions();
@@ -23,31 +24,24 @@ public class MovePlatformY : MonoBehaviour
 
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (freez && !hasStartedFreeze)
+        {
+            hasStartedFreeze = true;
+            move = false;
+            StartCoroutine(freezePlatform());
+        }
+
         if (move)
         {
             moveTiles();
-
         }
 
     }
-
-    private void FixedUpdate()
-    {
-        if (inputObj.Player.Power.IsPressed() && move)
-        {
-            StartCoroutine(freezePlatform());
-            //button.gameObject.SetActive(false);
-        }
-
-     }
 
 
     void moveTiles()
@@ -57,7 +51,7 @@ public class MovePlatformY : MonoBehaviour
             transform.position += Vector3.up * moveSpeed * Time.deltaTime;
             if(transform.position.y >= max)
             {
-                Debug.Log("Max Reached");
+                //Debug.Log("Max Reached");
                 goUp = false;
             }
             
@@ -73,24 +67,16 @@ public class MovePlatformY : MonoBehaviour
         //if(transform.position)
     }
 
-
-    void freezeBlock()
-    {
-        Transform currTransform = gameObject.transform;
-        if (freez)
-        {
-            transform.position = currTransform.position;
-        }
-        
-    }
-
     IEnumerator freezePlatform()
     {
-        move = false;
-        freezeBlock();
+        button.gameObject.GetComponent<OnScreenButton>().enabled = false;
+        button.gameObject.GetComponent<Image>().color = Color.black;
         yield return new WaitForSeconds(timer);
+        button.gameObject.GetComponent<Image>().color = Color.white;
+        button.gameObject.GetComponent<OnScreenButton>().enabled = true;
         freez = false;
         move = true;
+        hasStartedFreeze = false;
     }
 
 

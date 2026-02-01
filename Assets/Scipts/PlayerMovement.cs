@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     public static InputSystem_Actions playerControl;
     SpriteRenderer spRender;
+    
 
     private void Awake()
     {
@@ -43,6 +45,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+        else if (playerControl.Player.Reset.triggered)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        else if (playerControl.Player.Interact.triggered)
+        {
+            switchCharacter();
+        }
 
     }
 
@@ -51,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
         animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
         animator.SetFloat("yVelocity", rb.velocity.y);
+
+        if (playerControl.Player.Power.triggered)
+        {
+            powers(gameObject.transform.parent);
+        }
     }
 
     void FlipSprite()
@@ -78,6 +94,34 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         isGrounded = false;
         animator.SetBool("isJumping", !isGrounded);
+    }
+
+    void switchCharacter()
+    {
+        int currentObj = gameObject.transform.GetSiblingIndex();
+        Transform currPlayerPosition = gameObject.transform;
+        Transform parent = gameObject.transform.parent;
+        int nextObj = currentObj + 1;
+        if(nextObj == 3)
+        {
+            nextObj = 0;
+        }
+        Transform nextCharacte = parent.transform.GetChild(nextObj);
+        nextCharacte.position = currPlayerPosition.position;
+        nextCharacte.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+
+    void powers(Transform parent)
+    {
+        int curr = gameObject.transform.GetSiblingIndex();
+        
+        if (gameObject.transform.GetSiblingIndex() == 0)
+        {
+            Debug.Log("Correct PLayer");
+            MovePlatformY.freez = true;
+        }
     }
 
 }

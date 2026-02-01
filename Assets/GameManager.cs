@@ -36,11 +36,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator reloadScene()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-    }
 
 }
