@@ -33,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
-
     {
         horizontalInput = playerControl.Player.Move.ReadValue<Vector2>().x;
 
@@ -45,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        firstMaskPower();
     }
 
     private void FixedUpdate()
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.GetType());
+        //Debug.Log(collision.GetType());
         isGrounded = true;
         animator.SetBool("isJumping", !isGrounded);
     }
@@ -79,5 +79,10 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         isGrounded = false;
         animator.SetBool("isJumping", !isGrounded);
+    }
+
+    private void firstMaskPower()
+    {
+       
     }
 }
